@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-cream-100 font-body text-ink antialiased;
+  background-image:
+    radial-gradient(1200px 500px at 50% -10%, rgba(227, 194, 122, 0.22), transparent 60%),
+    radial-gradient(900px 400px at 100% 110%, rgba(142, 47, 60, 0.08), transparent 55%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(212, 169, 79, 0.35);
+}
+
+/* Delicate floral corner ornaments */
+.floral-corner {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0.55;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.floral-corner--tl {
+  top: -28px;
+  left: -30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23C19239' stroke-width='1.4'%3E%3Cpath d='M8 112C8 62 42 20 88 8'/%3E%3Cpath d='M26 96c2-20 16-34 36-38-2 20-16 34-36 38z'/%3E%3Cpath d='M46 70c1-16 13-27 29-30-1 16-13 27-29 30z'/%3E%3C/g%3E%3Cg fill='%238E2F3C' opacity='.55'%3E%3Ccircle cx='30' cy='92' r='2.6'/%3E%3Ccircle cx='50' cy='66' r='2.2'/%3E%3Ccircle cx='70' cy='42' r='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.floral-corner--br {
+  bottom: -28px;
+  right: -30px;
+  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23C19239' stroke-width='1.4'%3E%3Cpath d='M8 112C8 62 42 20 88 8'/%3E%3Cpath d='M26 96c2-20 16-34 36-38-2 20-16 34-36 38z'/%3E%3Cpath d='M46 70c1-16 13-27 29-30-1 16-13 27-29 30z'/%3E%3C/g%3E%3Cg fill='%238E2F3C' opacity='.55'%3E%3Ccircle cx='30' cy='92' r='2.6'/%3E%3Ccircle cx='50' cy='66' r='2.2'/%3E%3Ccircle cx='70' cy='42' r='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Traditional Uzbek ikat / adras inspired pattern */
+.ikat {
+  background-color: #8e2f3c;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(227, 194, 122, 0.55) 0 6px, transparent 7px),
+    radial-gradient(circle at 78% 22%, rgba(253, 251, 246, 0.35) 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 55%, rgba(227, 194, 122, 0.4) 0 7px, transparent 8px),
+    radial-gradient(circle at 18% 78%, rgba(253, 251, 246, 0.28) 0 5px, transparent 6px),
+    radial-gradient(circle at 82% 76%, rgba(227, 194, 122, 0.45) 0 6px, transparent 7px),
+    linear-gradient(115deg, transparent 0 42%, rgba(255, 255, 255, 0.08) 42% 58%, transparent 58%),
+    linear-gradient(65deg, rgba(75, 21, 32, 0.55) 0 20%, transparent 20% 80%, rgba(75, 21, 32, 0.4) 80%);
+  background-size: 120px 120px, 140px 140px, 160px 160px, 130px 130px, 150px 150px, 100% 100%, 100% 100%;
+}
+
+.ikat-soft {
+  background-color: #f5ebd8;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(142, 47, 60, 0.18) 0 5px, transparent 6px),
+    radial-gradient(circle at 75% 20%, rgba(193, 146, 57, 0.25) 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 50%, rgba(142, 47, 60, 0.14) 0 6px, transparent 7px),
+    radial-gradient(circle at 20% 80%, rgba(193, 146, 57, 0.22) 0 5px, transparent 6px),
+    radial-gradient(circle at 80% 78%, rgba(142, 47, 60, 0.16) 0 5px, transparent 6px);
+  background-size: 110px 110px, 130px 130px, 150px 150px, 120px 120px, 140px 140px;
+}
+
+.gold-line {
+  background: linear-gradient(90deg, transparent, #c19239, transparent);
+}
+
+.card-panel {
+  @apply rounded-[28px] border border-gold-300/40 bg-cream-50/90 shadow-card backdrop-blur-sm;
+}
+
+.btn-primary {
+  @apply inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-maroon-600 px-5 py-4 font-semibold text-cream-50 shadow-soft transition active:scale-[0.98];
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-maroon-600/30 bg-cream-50 px-4 py-3 text-sm font-semibold text-maroon-700 transition active:scale-[0.98];
+}
+
+.section-label {
+  @apply text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-600;
+}
+
+/* Modern gold shimmer for display headings */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    100deg,
+    #8e2f3c 0%,
+    #c19239 28%,
+    #f3e0b0 50%,
+    #c19239 72%,
+    #8e2f3c 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldShimmer 5s linear infinite;
+}
+
+.glass {
+  background: rgba(253, 251, 246, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.field {
+  @apply w-full rounded-2xl border border-gold-300/60 bg-cream-50 px-4 py-3.5 text-[15px] text-ink outline-none transition placeholder:text-ink/35 focus:border-maroon-500 focus:ring-2 focus:ring-maroon-500/15;
+}
+
+/* Living background fallback while the video loads or if no video file is added */
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-bg {
+  background-size: 220% 220%;
+  animation: bgShift 18s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
